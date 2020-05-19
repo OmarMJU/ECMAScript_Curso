@@ -88,3 +88,8 @@ const promesa3 = () => {
 promesa3()
 .then(mensajeOk => console.log(mensajeOk))
 .catch(mensajeError => console.error(mensajeError));
+
+
+/** MODULOS **/
+import { saludar } from "./modulo.js";
+saludar("Mauricio");
