@@ -35,3 +35,56 @@ const team = ["Leslie", ...chicasGuapas, ...profesiones];
 console.log(team);
 
 
+/** PROMESAS **/
+// Tarea que va a realizar la promesa.
+function funcionPromesa(todoOk, todoNoOK) {
+    if (true) {
+        todoNoOK("Hurra!! Todo esta genial 😍");
+    } else {
+        todoNoOK("Algo fallo 😩");
+    }
+}
+
+// Tarea que va a realizar la promesa si todo salió bien.
+function cumpliPromesa(mensaje) {
+    console.log(mensaje);
+} 
+
+// Tarea que va a realizar la promesa si todo salió mal.
+function noCumpliPromesa(mensaje) {
+    console.error(mensaje);
+}
+
+// La promesa.
+let promesa = new Promise(funcionPromesa);
+promesa.then(cumpliPromesa)
+.catch(noCumpliPromesa);
+
+
+// Ejemplo 2.
+let promesa2 = new Promise((todoOk, todoNoOK) => {
+    if(false) {
+        todoNoOK("Hurra!! Todo esta genial 😍");
+    } else {
+        todoNoOK("Algo fallo 😩");
+    }
+});
+
+promesa2.then(hurra => console.log(hurra))
+.catch(error => console.log(error));
+
+
+// Ejemplo 3
+const promesa3 = () => {
+    return new Promise((todoOk, noOk) => {
+        if(false) {
+            todoOk("Hurra!! Todo esta genial 😍");
+        } else {
+            noOk("Algo fallo 😩");
+        }
+    }); 
+};
+
+promesa3()
+.then(mensajeOk => console.log(mensajeOk))
+.catch(mensajeError => console.error(mensajeError));
