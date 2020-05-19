@@ -93,3 +93,19 @@ promesa3()
 /** MODULOS **/
 import { saludar } from "./modulo.js";
 saludar("Mauricio");
+
+
+
+/** GENERADORES **/
+function* funcionGenerador() {
+    if(true) {
+        yield "Hola (Primer llamado al generador)";
+    }
+    if(true) {
+        yield "Omar (Segundo llamado al generador)";
+    }
+}
+
+const generadorM = funcionGenerador();
+console.log(generadorM.next().value);
+console.log(generadorM.next().value);
